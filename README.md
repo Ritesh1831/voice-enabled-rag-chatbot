@@ -130,6 +130,9 @@ http://127.0.0.1:9000
    * English translation
    * Top-2 retrieved Wikipedia contexts
    * Final answer in **English and Hindi**
+  
+<img width="1914" height="975" alt="Screenshot 2026-01-29 082341" src="https://github.com/user-attachments/assets/6e46a718-2134-4ca4-869f-3c991e5363b8" />
+
 
 ---
 
