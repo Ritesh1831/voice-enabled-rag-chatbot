@@ -1,0 +1,15 @@
+fastapi
+uvicorn[standard]
+requests
+pydub
+numpy
+langchain
+langchain_huggingface
+langchain_community
+langchain_text_splitters
+sentence-transformers
+faiss-cpu
+transformers
+torch
+google-genai
+python-dotenv
