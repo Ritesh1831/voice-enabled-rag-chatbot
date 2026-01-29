@@ -1,4 +1,3 @@
-````markdown
 # Voice-Enabled RAG Chatbot (Hindi → English)
 
 This repository contains an end-to-end **voice-enabled Retrieval Augmented Generation (RAG) chatbot**.  
@@ -44,7 +43,7 @@ The final answer is displayed in **both English and Hindi**.
 ```bash
 git clone <your-github-repo-url>
 cd <repo-name>
-````
+
 
 ### 2. Create and Activate Virtual Environment
 
@@ -56,12 +55,6 @@ python -m venv venv
 
 ```bash
 venv\Scripts\activate
-```
-
-**Linux / macOS**
-
-```bash
-source venv/bin/activate
 ```
 
 ### 3. Install Dependencies
