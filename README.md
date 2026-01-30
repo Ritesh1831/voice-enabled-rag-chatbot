@@ -191,7 +191,3 @@ end-to-end RAG system.
 The focus was on **robustness, clarity, and real-world usability** rather than shortcuts.
 
 ---
-
-```
-::contentReference[oaicite:0]{index=0}
-```
