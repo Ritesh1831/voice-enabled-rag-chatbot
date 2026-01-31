@@ -1,11 +1,6 @@
 # asr_app.py
 """
 FastAPI ASR service (language-specific).
-
-RAG-safe version:
-- Never crashes the whole pipeline
-- Returns empty transcription on recoverable errors
-- Designed to run continuously as a microservice
 """
 
 import os
@@ -21,24 +16,18 @@ import torch
 from transformers import pipeline
 from pydub import AudioSegment
 
-# ---------------------------
 # Configuration
-# ---------------------------
 MODEL_ID = "ai4bharat/indicwav2vec-hindi"
 TARGET_SAMPLE_RATE = 16000
 
-# ---------------------------
 # Logging & globals
-# ---------------------------
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 logger = logging.getLogger("asr_app")
 
 asr_pipeline = None
 device_name = "cpu"
 
-# ---------------------------
 # Utilities
-# ---------------------------
 def _get_suffix_from_filename(filename: Optional[str]) -> str:
     if not filename or "." not in filename:
         return ".tmp"
@@ -82,7 +71,6 @@ def convert_upload_to_wav_file(in_bytes: bytes, filename_hint: Optional[str]) ->
 def transcribe_wav_file(wav_path: str) -> str:
     """
     Transcribe WAV file using ASR pipeline.
-    Returns empty string on failure (RAG-safe).
     """
     if asr_pipeline is None or not wav_path:
         return ""
@@ -104,9 +92,7 @@ def transcribe_wav_file(wav_path: str) -> str:
         return ""
 
 
-# ---------------------------
 # Lifespan
-# ---------------------------
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     global asr_pipeline, device_name
@@ -136,9 +122,7 @@ async def lifespan(app: FastAPI):
     logger.info("ASR service shutting down")
 
 
-# ---------------------------
 # FastAPI app
-# ---------------------------
 app = FastAPI(title="ASR Service", version="1.0", lifespan=lifespan)
 
 
@@ -183,3 +167,4 @@ async def transcribe_endpoint(file: Optional[UploadFile] = File(None), request: 
         "text": text,
         "model": MODEL_ID or "",
     })
+
