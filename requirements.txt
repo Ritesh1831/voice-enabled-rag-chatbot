@@ -1,0 +1,36 @@
+# requirements.txt
+# Voice RAG Chatbot — Python 3.10+
+# Single service: no separate ASR server needed (Groq Whisper handles transcription)
+
+# ── Web framework ──────────────────────────────────────────────────────────────
+fastapi>=0.110.0
+uvicorn[standard]>=0.29.0
+python-multipart>=0.0.9
+
+# ── LLM + ASR (Groq handles both — free tier) ─────────────────────────────────
+groq>=0.9.0
+
+# ── Translation (Sarvam AI) ───────────────────────────────────────────────────
+requests>=2.31.0
+
+# ── Embeddings + Vector DB ────────────────────────────────────────────────────
+langchain>=0.2.0
+langchain-community>=0.2.0
+langchain-huggingface>=0.0.3
+langchain-text-splitters>=0.2.0
+sentence-transformers>=3.0.0
+faiss-cpu>=1.7.4
+
+# ── PyTorch (CPU only — embeddings only, no local ASR model needed) ───────────
+# Install CPU-only build to keep image size small on free hosting:
+# pip install torch --index-url https://download.pytorch.org/whl/cpu
+torch>=2.1.0
+
+# ── Utilities ─────────────────────────────────────────────────────────────────
+python-dotenv>=1.0.0
+
+# ── Optional: local ASR server (asr_app.py) ───────────────────────────────────
+# Only needed if you want to run the local Hindi ASR service alongside the chatbot.
+# transformers>=4.40.0
+# ffmpeg must be installed at OS level: winget install ffmpeg  (Windows)
+#                                       apt-get install ffmpeg (Linux)

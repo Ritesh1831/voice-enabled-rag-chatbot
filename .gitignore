@@ -1,0 +1,9 @@
+venv/
+.env
+__pycache__/
+*.pyc
+vector_db/
+task1_outputs/
+*.wav
+*.webm
+*.mp3
