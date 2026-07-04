@@ -1,6 +1,5 @@
 --extra-index-url https://download.pytorch.org/whl/cpu
-torch==2.1.0+cpu
-
+torch==2.12.1+cpu
 fastapi>=0.110.0
 uvicorn[standard]>=0.29.0
 python-multipart>=0.0.9
