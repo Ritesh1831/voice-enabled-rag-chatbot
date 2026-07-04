@@ -7,7 +7,8 @@ Users ask questions in **Hindi via audio**. The system transcribes the speech, t
 
 ---
 
-![Voice RAG Chatbot UI](https://github.com/user-attachments/assets/6e46a718-2134-4ca4-869f-3c991e5363b8)
+![Voice RAG Chatbot UI](<img width="1918" height="1026" alt="image" src="https://github.com/user-attachments/assets/9978e2e8-8dea-4ac9-8bce-1873ecacb47d" />
+)
 
 ---
 
